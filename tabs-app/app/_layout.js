@@ -35,5 +35,6 @@ export default () => {
         },
         headerTintColor: '#1E2632',
     }} />
+    <Stack.Screen name="home" options={{headerShown: false}}/>
     </Stack>
 }

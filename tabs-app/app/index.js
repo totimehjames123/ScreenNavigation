@@ -1,5 +1,5 @@
 import { StyleSheet, Text, View, Button } from "react-native";
-import { Link, Stack } from "expo-router";
+import { Link, Redirect, Stack } from "expo-router";
 
 export default function Page() {
 
@@ -15,27 +15,29 @@ export default function Page() {
 ]
 
   return (
-    <View style={styles.container}>
-      {/* <Stack.Screen options={{title: 'Home Screen'}}/> */}
-      <View style={styles.main}>
-        <Text style={styles.title}>Hello World</Text>
-        <Text style={styles.subtitle}>This is the first page of your app.</Text>
-      </View>
-      <Link href={'/James'}>Go to profile page --  James</Link>
+    <Redirect href={'/home'}/>
 
-      {users.map((user, index) => (
-        <Link id={index} href={`/${user.username}`}> Open {user.name}'s profile</Link>
-      ))}
+    // <View style={styles.container}>
+    //   {/* <Stack.Screen options={{title: 'Home Screen'}}/> */}
+    //   <View style={styles.main}>
+    //     <Text style={styles.title}>Hello World</Text>
+    //     <Text style={styles.subtitle}>This is the first page of your app.</Text>
+    //   </View>
+    //   <Link href={'/James'}>Go to profile page --  James</Link>
 
-      <Link href={{
-        pathname: '/JohnAidoo',
-        params: {
-          name: 'John',
-          surname: 'Aidoo'
-        }
-      }}>Go to profile --- John page</Link>
+    //   {users.map((user, index) => (
+    //     <Link id={index} href={`/${user.username}`}> Open {user.name}'s profile</Link>
+    //   ))}
 
-    </View>
+    //   <Link href={{
+    //     pathname: '/JohnAidoo',
+    //     params: {
+    //       name: 'John',
+    //       surname: 'Aidoo'
+    //     }
+    //   }}>Go to profile --- John page</Link>
+
+    // </View>
   );
 }
 
