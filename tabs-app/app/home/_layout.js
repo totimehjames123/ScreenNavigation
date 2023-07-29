@@ -19,9 +19,10 @@ export default () => {
         <Tabs.Screen name="messages"
             options={{
                 tabBarIcon: ({color}) => <FontAwesome name="envelope" size={24} color={color}/>
-                ,title: "Messages"
+                ,headerShown: false
             }}
         />
+        
 
     </Tabs>
     )
